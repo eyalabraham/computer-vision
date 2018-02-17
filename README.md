@@ -120,12 +120,18 @@ The program requires a connected webcam and an NXT pan-tilt mechanical setup and
 's' key **Show**: this is a test mode that shows the tracked blob. Use this mode to test blob tracking on the display.
 't' key **Track**: this mode activates the motors and sends power controls to them. The Track mode will be halted (red 'Track' symbol) if the blob is lost, or more than one blob is detected. Tracking will resume automatically when a single blob is re-detected.
 
-### Track object through object detection objtracker.py
+### Track object with tracking algorithms objtracker.py
 Python OpenCV and Lego NXT program for tracking object with a webcam and a pan-tilt system. It is based on code from [https://www.learnopencv.com/object-tracking-using-opencv-cpp-python/]
 The program requires a connected webcam and an NXT pan-tilt mechanical setup and has three operating modes:
 'm' key **Mark**: enter this mode while holding an object in front of the webcam, and use the mouse to select it with a rectangle.
 's' key **Show**: this is a test mode that shows the tracked object. Use this mode to test tracking on the display.
 't' key **Track**: this mode activates the motors and sends power controls to them. The Track mode will be halted and a red bounding box is displayed if the object is lost. Tracking will resume automatically when the tracker algorithm re-detects the object. With the default selected tracker algorithm set to KCF simply bringing the object back into the the view of the red bounding box will usually resume detection.
+
+### Room enter and exit monitor based on sensing movement with video frame diff peoplecount_diff.py
+This implementation uses a webcam pointed across the room entry way, and counts people entering and exiting the room. It uses a simple frame subtraction and threshold method to find differences between consecutive frames. The differences are interpreted as motion. The delta image is thresholded and then searched for contours.
+Because there may be many contours, the program finds the bounding box for *all* contours, and then marks that 'super' bounding box on the video.
+The 'super' contour is tracked vs. two vertical lines on the video frame, and a pattern of crossing both lined in one direction is counted as entry or exit from the room.
+Because the camera is not mounted from above, counting might not be accurate.
 
 ### PID tuning
 The pan-tilt system has two PID controllers, one for Pan and another for Tilt. Both controllers calculate the control value that is then fed to the NXT motors. Tuning the PID coefficients Kp, Ki, and Kd can be done by following any number of methods. After the initial setting good deal of trial and error can hone them to achieve the desired response.
@@ -139,17 +145,20 @@ First, it helps correct small residual tilt position errors after a move, and se
 - When using higher frame resolutions such as 640x480 instead of 320x240, the errors double in amplitude. Care should be taken to reduce the PID constants by at least the same ratio so that the controller will not saturate its output.
 
 ## Files
-README.md This file
+*README.md* This file
 
-blobtrack.py Color blob object detection and tracking
+*blobtrack.py* Color blob object detection and tracking
 
-objtracker.py Object tracking with KCF tracker with pan-tilt camera mount
+*objtracker.py* Object tracking with KCF tracker with pan-tilt camera mount
 
-opencvconst.py Some OpenCV camera property constants
-cspace.py Test program for checking out color space conversions
-blobtrackHSV.py Testing HSV color conversation blob detection
-blobtrackRGB.py Testing RGB color conversation blob detection
-pantilt.py Test driver for NXT motor motion in pan-tilt setup
-webcamperf.py Test program for webcam Fps performance
-trackers.py Test program for comparing various tracker algorithm behavior
+*peoplecount_diff.py* Room enter and exit monitor based on sensing movement with video frame diff
+
+*expfilter.py* A class implementing an exponention filter object
+*opencvconst.py* Some OpenCV camera property constants
+*cspace.py* Test program for checking out color space conversions
+*blobtrackHSV.py* Testing HSV color conversation blob detection
+*blobtrackRGB.py* Testing RGB color conversation blob detection
+*pantilt.py* Test driver for NXT motor motion in pan-tilt setup
+*webcamperf.py* Test program for webcam Fps performance
+*trackers.py* Test program for comparing various tracker algorithm behavior
 
