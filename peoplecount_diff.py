@@ -194,7 +194,7 @@ def main():
                     room_occupancy = 0
                 state = CROSS_BLOCK
                 inhibit_start = time.time()
-                threading.Thread(target=thread_announce, args=('goodby.wav',)).start()
+                threading.Thread(target=thread_announce, args=('media/goodby.wav',)).start()
                 
         if curr_x < sense_line1 and direction > 0:
             if state == CROSS_IN:
@@ -202,7 +202,7 @@ def main():
                 count += 1
                 state = CROSS_BLOCK
                 inhibit_start = time.time()
-                threading.Thread(target=thread_announce, args=('hello.wav',)).start()
+                threading.Thread(target=thread_announce, args=('media/hello.wav',)).start()
 
         inhibit_time = time.time() - inhibit_start
         if state == CROSS_BLOCK and inhibit_time >= 1:
