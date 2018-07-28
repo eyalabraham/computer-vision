@@ -153,7 +153,7 @@ First, it helps correct small residual tilt position errors after a move, and se
 
 *peoplecount_diff.py* Room enter and exit monitor based on sensing movement with video frame diff
 
-*expfilter.py* A class implementing an exponention filter object
+*expfilter.py* A class implementing an exponential filter object
 *opencvconst.py* Some OpenCV camera property constants
 *cspace.py* Test program for checking out color space conversions
 *blobtrackHSV.py* Testing HSV color conversation blob detection
@@ -161,4 +161,12 @@ First, it helps correct small residual tilt position errors after a move, and se
 *pantilt.py* Test driver for NXT motor motion in pan-tilt setup
 *webcamperf.py* Test program for webcam Fps performance
 *trackers.py* Test program for comparing various tracker algorithm behavior
+
+*opticalflow1.py* study optical flow using Lucas-Kanade Optical Flow method for sparse points of interest
+*opticalflow2.py* study optical flow using Dense Optical Flow method
+*opticalflow3.py* study optical flow study Shi-Tomasi Corner Detector
+*opticalflow4.py* Lucas-Kanade Optical Flow method for sparse points of interest track predefines a set of points on the source image
+*opticalflow5.py* study optical flow using sequential frame subtraction method
+*peoplecount_lk.py* program to count people entering and exiting a room using Lucas-Kanade Optical Flow method
+
 
