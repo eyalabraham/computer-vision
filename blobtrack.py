@@ -93,7 +93,7 @@ def main():
     pan_motor = nxt.motor.Motor(devNXT, nxt.motor.PORT_B)
 
     #
-    # Initialize tart time and frame count
+    # Initialize start time and frame count
     #
     frame_count = 0
     start = time.time()
