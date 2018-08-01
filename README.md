@@ -169,4 +169,8 @@ First, it helps correct small residual tilt position errors after a move, and se
 *opticalflow5.py* study optical flow using sequential frame subtraction method
 *peoplecount_lk.py* program to count people entering and exiting a room using Lucas-Kanade Optical Flow method
 
+*blocks.py* Identify blocks and determine their orientation angle and x,y position coordinate, and their color. This is a study for a Python program to be incorporated into my robotic arm project, to identify the blocks and then pick and place them in a sorted pile.
+*blocks-webcam.py* Same as `blocks.py` but perform live analysis on webcam feed.
+*colorlabeler.py* Helper class for color classification.
+
 

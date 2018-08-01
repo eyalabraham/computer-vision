@@ -160,7 +160,7 @@ def main():
     while(True):
         #
         # capture a frame
-        # cover to appropriate color space to improve detection
+        # convert to appropriate color space to improve detection
         # in different lighting conditions
         #
         cap_ok, frame = cap.read()
