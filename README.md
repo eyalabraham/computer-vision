@@ -145,32 +145,32 @@ First, it helps correct small residual tilt position errors after a move, and se
 - When using higher frame resolutions such as 640x480 instead of 320x240, the errors double in amplitude. Care should be taken to reduce the PID constants by at least the same ratio so that the controller will not saturate its output.
 
 ## Files
-*README.md* This file
+- *README.md* This file
 
-*blobtrack.py* Color blob object detection and tracking
+- *blobtrack.py* Color blob object detection and tracking
 
-*objtracker.py* Object tracking with KCF tracker with pan-tilt camera mount
+- *objtracker.py* Object tracking with KCF tracker with pan-tilt camera mount
 
-*peoplecount_diff.py* Room enter and exit monitor based on sensing movement with video frame diff
+- *peoplecount_diff.py* Room enter and exit monitor based on sensing movement with video frame diff
 
-*expfilter.py* A class implementing an exponential filter object
-*opencvconst.py* Some OpenCV camera property constants
-*cspace.py* Test program for checking out color space conversions
-*blobtrackHSV.py* Testing HSV color conversation blob detection
-*blobtrackRGB.py* Testing RGB color conversation blob detection
-*pantilt.py* Test driver for NXT motor motion in pan-tilt setup
-*webcamperf.py* Test program for webcam Fps performance
-*trackers.py* Test program for comparing various tracker algorithm behavior
+- *expfilter.py* A class implementing an exponential filter object
+- *opencvconst.py* Some OpenCV camera property constants
+- *cspace.py* Test program for checking out color space conversions
+- *blobtrackHSV.py* Testing HSV color conversation blob detection
+- *blobtrackRGB.py* Testing RGB color conversation blob detection
+- *pantilt.py* Test driver for NXT motor motion in pan-tilt setup
+- *webcamperf.py* Test program for webcam Fps performance
+- *trackers.py* Test program for comparing various tracker algorithm behavior
 
-*opticalflow1.py* study optical flow using Lucas-Kanade Optical Flow method for sparse points of interest
-*opticalflow2.py* study optical flow using Dense Optical Flow method
-*opticalflow3.py* study optical flow study Shi-Tomasi Corner Detector
-*opticalflow4.py* Lucas-Kanade Optical Flow method for sparse points of interest track predefines a set of points on the source image
-*opticalflow5.py* study optical flow using sequential frame subtraction method
-*peoplecount_lk.py* program to count people entering and exiting a room using Lucas-Kanade Optical Flow method
+- *opticalflow1.py* study optical flow using Lucas-Kanade Optical Flow method for sparse points of interest
+- *opticalflow2.py* study optical flow using Dense Optical Flow method
+- *opticalflow3.py* study optical flow study Shi-Tomasi Corner Detector
+- *opticalflow4.py* Lucas-Kanade Optical Flow method for sparse points of interest track predefines a set of points on the source image
+- *opticalflow5.py* study optical flow using sequential frame subtraction method
+- *peoplecount_lk.py* program to count people entering and exiting a room using Lucas-Kanade Optical Flow method
 
-*blocks.py* Identify blocks and determine their orientation angle and x,y position coordinate, and their color. This is a study for a Python program to be incorporated into my robotic arm project, to identify the blocks and then pick and place them in a sorted pile.
-*blocks-webcam.py* Same as `blocks.py` but perform live analysis on webcam feed.
-*colorlabeler.py* Helper class for color classification.
+- *blocks.py* Identify blocks and determine their orientation angle and x,y position coordinate, and their color. This is a study for a Python program to be incorporated into my robotic arm project, to identify the blocks and then pick and place them in a sorted pile.
+- *blocks-webcam.py* Same as `blocks.py` but perform live analysis on webcam feed.
+- *colorlabeler.py* Helper class for color classification.
 
 
