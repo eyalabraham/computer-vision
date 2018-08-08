@@ -146,7 +146,7 @@ def get_rotation(box):
     
     # Calculate the line rotation
     if x1 == x2:
-        rotation = 0.0
+        rotation = 90.0
     else:
         rotation = 57.29578049 * math.atan(float(y2-y1) / float(x2-x1))
         
