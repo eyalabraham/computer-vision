@@ -14,19 +14,17 @@ import cv2
 
 class ColorLabeler(object):
 
-    def __init__(self):
-        # initialize the colors dictionary, containing the color
-        # name as the key and the RGB tuple as the value
-        #colors = OrderedDict({
-        #    "red": (255, 0, 0),
-        #    "green": (0, 255, 0),
-        #    "blue": (0, 0, 255)})
+    def __init__(self, color_dictionary = {"red": (255, 0, 0),"green": (0, 255, 0),"blue": (0, 0, 255)}):
+        """
+        Initialize the colors dictionary, containing the color name as the key and the RGB tuple as the value.
+        For typical Lego bricks you can use somthing like:
+        color_dictionary = {"red": (100, 30, 50),"green": (25, 65, 45),"blue": (24, 43, 105),"orange": (160, 90, 50)}
+        This will be dependant on lightig and camera, so sample your RGB tuple and use it to initialize
+        the detector.
+        """
 
-        # RGB color space of actual red, green, and blue bricks
-        colors = OrderedDict({
-            "red": (100, 30, 50),
-            "green": (25, 65, 45),
-            "blue": (24, 43, 105)})
+        # RGB color dictionary
+        colors = OrderedDict(color_dictionary)
 
         # allocate memory for the L*a*b* image, then initialize
         # the color names list
@@ -46,6 +44,8 @@ class ColorLabeler(object):
         #cv2.imshow('self lab', self.lab)
 
     def label(self, image, c):
+        """Color detector and labler. Returns string with color name from dictionary."""
+
         # construct a mask for the contour, then compute the
         # average L*a*b* value for the masked region
         mask = np.zeros(image.shape[:2], dtype="uint8")
